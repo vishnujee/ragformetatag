@@ -6,3 +6,4 @@ pypdf
 chromadb
 langchain
 langchain_chroma
+pysqlite3-binary
