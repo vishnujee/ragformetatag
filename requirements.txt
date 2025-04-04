@@ -3,7 +3,7 @@ langchain-community
 langchain-google-genai
 python-dotenv
 pypdf
-chromadb
+chromadb==0.4.22
 langchain
 langchain_chroma
 pysqlite3-binary
