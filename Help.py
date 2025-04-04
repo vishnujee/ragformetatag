@@ -17,6 +17,7 @@ from chromadb.config import Settings
 from langchain_chroma import Chroma  # Only import once after the fix
 
 load_dotenv()
+st.image("https://og-image.vercel.app/Llama%202%20Chatbot%20%7C%20AI%20Assistant.png?theme=light&md=1&fontSize=75px", caption="Share Preview Image")
 
 # Rest of your application code...
 
