@@ -1,9 +1,3 @@
-import pysqlite3
-import sys
-sys.modules["sqlite3"] = pysqlite3
-import sqlite3
-print(sqlite3.sqlite_version)
-
 import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -17,7 +11,17 @@ from chromadb.config import Settings
 from langchain_chroma import Chroma  # Only import once after the fix
 
 load_dotenv()
-st.image("https://og-image.vercel.app/Llama%202%20Chatbot%20%7C%20AI%20Assistant.png?theme=light&md=1&fontSize=75px", caption="Share Preview Image")
+import streamlit as st
+
+st.set_page_config(
+    page_title="🦙💬 Llama 2 Chatbot",
+    page_icon="🦙",
+    layout="wide"
+)
+
+st.header("Welcome to Llama 2 Chatbot! 🦙💬")
+st.write("Chat with a powerful AI model based on Llama 2.")
+
 
 # Rest of your application code...
 
