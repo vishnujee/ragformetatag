@@ -1,7 +1,8 @@
-# Fix for Streamlit Cloud SQLite version - must be VERY FIRST in your file
-__import__('pysqlite3')
+import pysqlite3
 import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+sys.modules["sqlite3"] = pysqlite3
+import sqlite3
+print(sqlite3.sqlite_version)
 
 import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
