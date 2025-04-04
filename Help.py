@@ -1,16 +1,23 @@
+# Fix for Streamlit Cloud SQLite version - must be VERY FIRST in your file
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain_chroma import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
-from chromadb.config import Settings  # Import Chroma settings
+from chromadb.config import Settings
+from langchain_chroma import Chroma  # Only import once after the fix
 
-import streamlit as st
+load_dotenv()
+
+# Rest of your application code...
 
 # Inject meta tags using unsafe_allow_html
 meta_tags = """
